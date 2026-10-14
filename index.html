@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colibrí · Cultura general con retroalimentación estilo Duolingo</title>
+  <meta name="description" content="Colibrí es una app de cultura general: 233 preguntas, retroalimentación inmediata, rachas diarias, exámenes cronometrados y duelos 1 vs 1 en vivo.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>if (!location.search.includes('static')) document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#inicio" aria-label="Colibrí, inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="34" height="34">
+            <use href="#colibri"></use>
+          </svg>
+        </span>
+        <span class="brand__name">Colibrí</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Principal">
+        <a href="#caracteristicas">Características</a>
+        <a href="#duelos">Duelos</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#faq">Preguntas</a>
+        <a class="btn btn--small btn--primary nav__cta" href="#descargar">Descargar</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <span class="pill">🐦 Cultura general con estilo Duolingo</span>
+          <h1>Aprende volando de <span class="grad">pregunta en pregunta</span></h1>
+          <p class="lead">
+            Responde, entiende y sube de nivel. Colibrí te explica <strong>por qué</strong> cada
+            opción está bien o mal, guarda tu racha diaria y te reta a duelos en vivo
+            contra tus amigos.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#descargar">Descargar la app</a>
+            <a class="btn btn--ghost" href="#como-funciona">Ver cómo funciona</a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong>233</strong><span>preguntas</span></li>
+            <li><strong>7</strong><span>categorías</span></li>
+            <li><strong>1&nbsp;vs&nbsp;1</strong><span>en vivo</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" data-delay="1">
+          <div class="hero__blob" aria-hidden="true"></div>
+
+          <div class="hero__stage">
+            <div class="mascot" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="230" height="230">
+                <use href="#colibri"></use>
+              </svg>
+            </div>
+
+            <div class="float float--xp">
+              <span class="float__icon">⚡</span>
+              <div><strong>+120 XP</strong><small>Sesión completada</small></div>
+            </div>
+            <div class="float float--streak">
+              <span class="float__icon">🔥</span>
+              <div><strong>Racha 7</strong><small>Días seguidos</small></div>
+            </div>
+            <div class="float float--duel">
+              <span class="float__icon">⚔️</span>
+              <div><strong>Duelo 8 · 7</strong><small>¡Vas ganando!</small></div>
+            </div>
+            <div class="hero__chip hero__chip--correct">✓ Respuesta correcta</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-label="Datos del banco de preguntas">
+      <div class="container band__grid">
+        <div class="band__item"><strong>233</strong><span>preguntas de concurso</span></div>
+        <div class="band__item"><strong>7</strong><span>categorías</span></div>
+        <div class="band__item"><strong>5</strong><span>fuentes universitarias</span></div>
+        <div class="band__item"><strong>10</strong><span>preguntas por duelo</span></div>
+        <div class="band__item"><strong>30</strong><span>XP de meta diaria</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="caracteristicas">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker">Características</span>
+          <h2>Todo lo que necesitas para estudiar sin aburrirte</h2>
+          <p>Micro-sesiones cortas, feedback real y competencia sana. Como Duolingo, pero para cultura general.</p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <span class="card__icon" style="--tone:#EDEAFD">💬</span>
+            <h3>Retroalimentación real</h3>
+            <p>No solo te dice si acertaste: te explica por qué está bien tu opción y por qué se equivocan las demás.</p>
+          </article>
+          <article class="card reveal" data-delay="1">
+            <span class="card__icon" style="--tone:#FFF0E4">🔥</span>
+            <h3>Racha diaria</h3>
+            <p>Alcanza los 30 XP del día y mantén viva tu racha. El colibrí descansa cuando tú ya dominaste el tema.</p>
+          </article>
+          <article class="card reveal" data-delay="2">
+            <span class="card__icon" style="--tone:#E4F9EE">⚔️</span>
+            <h3>Duelos en vivo</h3>
+            <p>Crea una sala, comparte el código de 6 dígitos y compite en tiempo real. Gana quien más acierte, y más rápido.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon" style="--tone:#EDEAFD">⏱️</span>
+            <h3>Exámenes cronometrados</h3>
+            <p>Modo examen sin pistas ni explicaciones hasta el final. Elige tiempo total, cantidad de preguntas y dificultad.</p>
+          </article>
+          <article class="card reveal" data-delay="1">
+            <span class="card__icon" style="--tone:#FFF0E4">🏆</span>
+            <h3>Ranking global</h3>
+            <p>Compite en el ranking semanal, mensual e histórico. Cada sesión suma XP y puntos a tu posición.</p>
+          </article>
+          <article class="card reveal" data-delay="2">
+            <span class="card__icon" style="--tone:#E4F9EE">🧠</span>
+            <h3>Repaso inteligente</h3>
+            <p>Las preguntas que fallas vuelven justo antes de que las olvides. Un plan de repaso automático hace el resto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="duelos">
+      <div class="container duel">
+        <div class="duel__copy reveal">
+          <span class="kicker">Multijugador</span>
+          <h2>Reta a un amigo en 6 dígitos</h2>
+          <p>
+            Abre la app, entra a <strong>Duelo en vivo</strong> y crea una sala. Comparte el
+            código con quien quieras: ambos reciben las mismas 10 preguntas al mismo tiempo.
+          </p>
+          <ol class="steps">
+            <li><span>1</span> Crea la sala y elige los filtros de preguntas</li>
+            <li><span>2</span> Comparte el código de 6 dígitos</li>
+            <li><span>3</span> Gana quien más acierte (y más rápido en empates)</li>
+          </ol>
+          <a class="btn btn--primary" href="#descargar">Empezar un duelo</a>
+        </div>
+
+        <div class="duel__mock reveal" data-delay="1">
+          <div class="mock">
+            <div class="mock__top">
+              <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+              <span class="mock__title">Sala de duelo</span>
+            </div>
+            <div class="mock__code">
+              <small>Código de la sala</small>
+              <strong>482 913</strong>
+            </div>
+            <div class="mock__players">
+              <div class="mock__player">
+                <span class="avatar avatar--a">R</span>
+                <div><strong>Romel</strong><small>Listo ✓</small></div>
+                <span class="mock__score">8</span>
+              </div>
+              <div class="mock__vs">vs</div>
+              <div class="mock__player">
+                <span class="avatar avatar--b">V</span>
+                <div><strong>Valeria</strong><small>Listo ✓</small></div>
+                <span class="mock__score">7</span>
+              </div>
+            </div>
+            <div class="mock__q">
+              <span class="mock__tag">Historia · Difícil</span>
+              <p>¿En qué año cayó el Imperio romano de Occidente?</p>
+              <div class="mock__opts">
+                <span>395 d.C.</span>
+                <span class="ok">476 d.C.</span>
+                <span>1453</span>
+                <span>800</span>
+              </div>
+            </div>
+            <div class="mock__bar"><i style="width:70%"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker">Cómo funciona</span>
+          <h2>Tres pasos y ya estás estudiando</h2>
+        </header>
+        <div class="grid grid--3">
+          <article class="stepcard reveal">
+            <span class="stepcard__n">01</span>
+            <h3>Arma tu prueba</h3>
+            <p>Elige categorías, dificultad, fuente universitaria, cantidad de preguntas y modo: normal con feedback o cronometrado.</p>
+          </article>
+          <article class="stepcard reveal" data-delay="1">
+            <span class="stepcard__n">02</span>
+            <h3>Responde y aprende</h3>
+            <p>Cada opción tiene explicación inmediata. Las que fallas entran a tu plan de repaso automático.</p>
+          </article>
+          <article class="stepcard reveal" data-delay="2">
+            <span class="stepcard__n">03</span>
+            <h3>Sube de nivel</h3>
+            <p>Gana XP y puntos, mantén la racha diaria y escala en el ranking global semanal, mensual e histórico.</p>
+          </article>
+        </div>
+
+        <div class="cats reveal">
+          <span class="cats__label">7 categorías esperando por ti</span>
+          <div class="cats__chips">
+            <span class="chip" style="--c:#F0699A">📖 Literatura</span>
+            <span class="chip" style="--c:#3AA8F0">🌎 Geografía</span>
+            <span class="chip" style="--c:#FB923C">🏛️ Historia</span>
+            <span class="chip" style="--c:#2FCB6E">➗ Matemáticas</span>
+            <span class="chip" style="--c:#8B5CF6">✍️ Lenguaje</span>
+            <span class="chip" style="--c:#06B6D4">🔬 Ciencias</span>
+            <span class="chip" style="--c:#E11D48">🧠 Sociales</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="faq">
+      <div class="container container--narrow">
+        <header class="section__head reveal">
+          <span class="kicker">Preguntas frecuentes</span>
+          <h2>Lo que suelen preguntarnos</h2>
+        </header>
+
+        <div class="faq reveal">
+          <details>
+            <summary>¿Necesito crear una cuenta?</summary>
+            <p>No. Puedes jugar como invitado con tu dispositivo y todo tu progreso queda guardado en local. Cuando quieras, te registras con email para tener tu cuenta y sincronizarlo en la nube.</p>
+          </details>
+          <details>
+            <summary>¿Funciona sin conexión?</summary>
+            <p>Sí. Las preguntas viven dentro de la app y tu progreso se guarda en el dispositivo. En cuanto vuelva la red, se sincroniza solo con el servidor.</p>
+          </details>
+          <details>
+            <summary>¿Cómo invito a alguien a un duelo?</summary>
+            <p>Entra a “Duelo en vivo”, crea una sala y comparte el código de 6 dígitos. Tu rival lo escribe en su teléfono y el duelo empieza cuando ambos estén listos.</p>
+          </details>
+          <details>
+            <summary>¿De dónde salen las preguntas?</summary>
+            <p>De un banco propio con fuentes de San Marcos, UNI, UTP, PUCP y preguntas originales Colibrí, organizadas por categoría, tema y dificultad.</p>
+          </details>
+          <details>
+            <summary>¿Puedo preparar un examen como el de admisión?</summary>
+            <p>Sí. En “Practicar” eliges categoría, dificultad, cantidad de preguntas y modo cronometrado con tiempo total: queda como un examen real.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="descargar">
+      <div class="container cta__inner reveal">
+        <div class="cta__mascot" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="120" height="120"><use href="#colibri"></use></svg>
+        </div>
+        <h2>¿Listo para despegar?</h2>
+        <p>Colibrí está disponible para Android. Constrúyelo desde el código fuente o pídenos el APK y empieza a volar hoy.</p>
+        <div class="cta__actions">
+          <a class="btn btn--light" href="#" id="downloadBtn">Descargar la app</a>
+          <a class="btn btn--outline-light" href="#caracteristicas">Ver características</a>
+        </div>
+        <small class="cta__note">Flutter · Node.js · PostgreSQL</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand" href="#inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="30" height="30"><use href="#colibri"></use></svg>
+        </span>
+        <span class="brand__name">Colibrí</span>
+      </a>
+      <nav class="footer__links" aria-label="Pie de página">
+        <a href="#caracteristicas">Características</a>
+        <a href="#duelos">Duelos</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <p class="footer__copy">© 2026 Colibrí · Cultura general</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Enlace de descarga próximamente ✨</div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#8B7BF6"/>
+        <stop offset="100%" stop-color="#5B4BD6"/>
+      </linearGradient>
+      <symbol id="colibri" viewBox="0 0 64 64">
+        <path d="M30 37 L6 47 L21 41 L11 56 L33 43 Z" fill="#5B4BD6"/>
+        <ellipse cx="33" cy="35" rx="17" ry="13" transform="rotate(-18 33 35)" fill="url(#cg)"/>
+        <path d="M31 31 C 28 13, 45 6, 54 11 C 47 20, 43 29, 36 34 Z" fill="#A99BFB"/>
+        <path d="M31 31 C 30 19, 41 12, 48 14 C 43 21, 39 28, 35 33 Z" fill="#C7BFFB" opacity=".7"/>
+        <circle cx="46" cy="28" r="9.5" fill="url(#cg)"/>
+        <path d="M54 27 L64 24.5 L54 31 Z" fill="#FF8A3D"/>
+        <path d="M49 34 c 3.5 1 5 3.5 4 6 c -2.5 -1.5 -5 -3.5 -6 -6 z" fill="#FF8A3D"/>
+        <circle cx="48.5" cy="26" r="3.4" fill="#1F1D2B"/>
+        <circle cx="49.8" cy="24.8" r="1.2" fill="#fff"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
