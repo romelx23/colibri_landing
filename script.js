@@ -1,4 +1,7 @@
 (() => {
+  // Pega aquí la URL de tu App Web de Google Apps Script (ver ../waitlist/README.md).
+  const WAITLIST_ENDPOINT = 'PEGA_TU_URL_DEL_APPS_SCRIPT_AQUI';
+
   const nav = document.getElementById('nav');
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
@@ -55,7 +58,8 @@
 
   const toast = document.getElementById('toast');
   let toastTimer;
-  const showToast = () => {
+  const showToast = (text) => {
+    if (text) toast.textContent = text;
     toast.classList.add('is-visible');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2600);
@@ -66,7 +70,65 @@
     download.addEventListener('click', (e) => {
       if (download.getAttribute('href') === '#') {
         e.preventDefault();
-        showToast();
+        showToast('Enlace de descarga próximamente ✨');
+      }
+    });
+  }
+
+  const form = document.getElementById('waitlistForm');
+  if (form) {
+    const btn = form.querySelector('button[type="submit"]');
+    const msg = document.getElementById('waitlistMsg');
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nombre = form.nombre.value.trim();
+      const email = form.email.value.trim();
+      const app = form.dataset.app || 'ingresaya';
+
+      msg.textContent = '';
+      msg.classList.remove('is-ok', 'is-error');
+
+      if (nombre.length < 2) {
+        msg.textContent = 'Escribe tu nombre para continuar.';
+        msg.classList.add('is-error');
+        return;
+      }
+      if (!EMAIL_RE.test(email)) {
+        msg.textContent = 'Escribe un correo válido.';
+        msg.classList.add('is-error');
+        return;
+      }
+      if (!WAITLIST_ENDPOINT.includes('script.google.com')) {
+        msg.textContent = 'Formulario en configuración: aún no se conectó el servidor.';
+        msg.classList.add('is-error');
+        return;
+      }
+
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+
+      try {
+        const res = await fetch(WAITLIST_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ app, nombre, email }),
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'error');
+
+        msg.textContent = '¡Listo! Te avisaremos cuando Ingresa Ya despegue. 🐦';
+        msg.classList.add('is-ok');
+        form.reset();
+        showToast('¡Bienvenida al acceso anticipado! 🎉');
+      } catch (err) {
+        msg.textContent = 'No se pudo enviar. Intenta de nuevo en unos segundos.';
+        msg.classList.add('is-error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
       }
     });
   }

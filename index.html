@@ -25,8 +25,9 @@
         <a href="#caracteristicas">Características</a>
         <a href="#duelos">Duelos</a>
         <a href="#como-funciona">Cómo funciona</a>
+        <a href="#historia">Historia</a>
         <a href="#faq">Preguntas</a>
-        <a class="btn btn--small btn--primary nav__cta" href="#descargar">Descargar</a>
+        <a class="btn btn--small btn--primary nav__cta" href="#acceso">Acceso anticipado</a>
       </nav>
 
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -47,7 +48,7 @@
             contra tus amigos.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#descargar">Descargar la app</a>
+            <a class="btn btn--primary" href="#acceso">Únete al acceso anticipado</a>
             <a class="btn btn--ghost" href="#como-funciona">Ver cómo funciona</a>
           </div>
           <ul class="hero__facts">
@@ -152,7 +153,7 @@
             <li><span>2</span> Comparte el código de 6 dígitos</li>
             <li><span>3</span> Gana quien más acierte (y más rápido en empates)</li>
           </ol>
-          <a class="btn btn--primary" href="#descargar">Empezar un duelo</a>
+          <a class="btn btn--primary" href="#acceso">Empezar un duelo</a>
         </div>
 
         <div class="duel__mock reveal" data-delay="1">
@@ -233,6 +234,61 @@
       </div>
     </section>
 
+    <section class="section" id="historia">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker">La historia detrás</span>
+          <h2>Del primer juego al tiempo real</h2>
+        </header>
+
+        <div class="story">
+          <div class="story__main reveal">
+            <p>
+              Con <strong>Gana4</strong> —mi cuatro en línea con IA y multijugador por WiFi—
+              ya sabía lo que costaba publicar una app. Con Ingresa Ya me propuse el siguiente
+              reto: <strong>tiempo real</strong>.
+            </p>
+            <p>
+              No quería un quiz con preguntas guardadas y un botón de “siguiente”. Quería duelos
+              en vivo: dos personas, el mismo código de sala, las mismas 10 preguntas compitiendo
+              al segundo. Detrás de eso hay WebSockets, un backend propio en Node.js y PostgreSQL,
+              salas con fases (lobby, juego y resultado) y una sincronización que no puede fallar
+              cuando la respuesta depende de milisegundos.
+            </p>
+            <p>
+              Pero el proyecto no empezó por el reto técnico, sino por una idea simple:
+              <strong>ayudar a los jóvenes que se preparan para el examen de admisión</strong>.
+              Cada opción trae su explicación — no solo “fallaste”, sino “aprende esto” — para que
+              estudiar no se sienta como memorizar.
+            </p>
+            <p>
+              Honestidad primero: esta es una <strong>versión alfa</strong>. El banco de preguntas
+              incluye fuentes de San Marcos con exámenes reales, pero todavía hay pocas preguntas
+              de otras universidades. Ampliar ese banco — UNI, PUCP, UTP y más — es exactamente
+              el siguiente paso, y por eso estamos abriendo el acceso por fases.
+            </p>
+          </div>
+
+          <aside class="story__side reveal" data-delay="1">
+            <h3>La arquitectura, en corto</h3>
+            <ul class="arch">
+              <li><strong>Flutter</strong><span>Cliente multiplataforma en Dart</span></li>
+              <li><strong>Riverpod + go_router</strong><span>Estado y navegación por features</span></li>
+              <li><strong>SharedPreferences</strong><span>Progreso local, sin base de datos</span></li>
+              <li><strong>Node.js + Express</strong><span>API REST con JWT</span></li>
+              <li><strong>PostgreSQL</strong><span>Jugadores, preguntas y duelos</span></li>
+              <li><strong>WebSockets (ws)</strong><span>Duelos en tiempo real</span></li>
+              <li><strong>Render</strong><span>Backend desplegado en la nube</span></li>
+            </ul>
+            <p class="story__note">
+              Las preguntas viven dentro de la app para que funcione sin conexión;
+              tu progreso se sincroniza solo cuando hay red.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--tint" id="faq">
       <div class="container container--narrow">
         <header class="section__head reveal">
@@ -241,6 +297,10 @@
         </header>
 
         <div class="faq reveal">
+          <details>
+            <summary>¿Cuándo estará disponible para todos?</summary>
+            <p>Estamos en fase alfa. Estamos puliendo los duelos en vivo y ampliando el banco de preguntas. Únete al acceso anticipado y te avisamos en cuanto abramos más plazas y la versión pública.</p>
+          </details>
           <details>
             <summary>¿Necesito crear una cuenta?</summary>
             <p>No. Puedes jugar como invitado con tu dispositivo y todo tu progreso queda guardado en local. Cuando quieras, te registras con email para tener tu cuenta y sincronizarlo en la nube.</p>
@@ -265,18 +325,35 @@
       </div>
     </section>
 
-    <section class="cta" id="descargar">
+    <section class="cta" id="acceso">
       <div class="container cta__inner reveal">
         <div class="cta__mascot" aria-hidden="true">
           <svg viewBox="0 0 64 64" width="120" height="120"><use href="#mascota"></use></svg>
         </div>
-        <h2>¿Listo para despegar?</h2>
-        <p>Ingresa Ya está disponible para Android. Descárgala desde Google Play y empieza a volar hoy.</p>
-        <div class="cta__actions">
-          <a class="btn btn--light" href="#" id="downloadBtn">Descargar la app</a>
-          <a class="btn btn--outline-light" href="#caracteristicas">Ver características</a>
-        </div>
-        <small class="cta__note">Flutter · Node.js · PostgreSQL</small>
+        <h2>Únete al acceso anticipado</h2>
+        <p>
+          Ingresa Ya está en fase alfa. Déjanos tu correo y sé de los primeros en probar
+          los duelos en vivo, el repaso inteligente y las nuevas categorías.
+        </p>
+
+        <form class="waitlist" id="waitlistForm" data-app="ingresaya" novalidate>
+          <div class="waitlist__fields">
+            <label class="sr-only" for="wl-name">Tu nombre</label>
+            <input class="waitlist__input" type="text" id="wl-name" name="nombre"
+                   placeholder="Tu nombre" required autocomplete="name" maxlength="80">
+            <label class="sr-only" for="wl-email">Tu correo</label>
+            <input class="waitlist__input" type="email" id="wl-email" name="email"
+                   placeholder="tu@correo.com" required autocomplete="email" maxlength="120">
+          </div>
+          <button class="btn btn--light waitlist__btn" type="submit">Unirme al acceso anticipado</button>
+          <p class="waitlist__msg" id="waitlistMsg" role="status" aria-live="polite"></p>
+          <small class="waitlist__note">
+            Sin spam: solo te escribimos cuando haya novedades.
+            <a href="politica-de-privacidad.html">Política de privacidad</a>
+          </small>
+        </form>
+
+        <small class="cta__note">Flutter · Riverpod · Node.js · PostgreSQL · WebSockets</small>
       </div>
     </section>
   </main>
@@ -293,10 +370,11 @@
         <a href="#caracteristicas">Características</a>
         <a href="#duelos">Duelos</a>
         <a href="#como-funciona">Cómo funciona</a>
+        <a href="#historia">Historia</a>
         <a href="#faq">Preguntas</a>
         <a href="politica-de-privacidad.html">Política de privacidad</a>
       </nav>
-      <p class="footer__copy">© 2026 Ingresa Ya · Cultura general</p>
+      <p class="footer__copy">© 2026 Romel · Hecho con Flutter · <a href="mailto:romelx23@gmail.com">romelx23@gmail.com</a></p>
     </div>
   </footer>
 
